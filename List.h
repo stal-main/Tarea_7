@@ -1,9 +1,5 @@
 #pragma once
 
-//clase abstracta con los metodos para una lista
-//obtenido del trabajo en clase
-//escrito por Julián Rodríguez
-
 template<typename E>
 
 class List {
