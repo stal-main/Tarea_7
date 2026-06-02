@@ -12,12 +12,21 @@ public:
 
 	BSTNode<E>* right;	
 
+	BSTNode(E element, BSTNode<E>* left, BSTNode<E>* right) {
+
+		this->element = element;
+
+		this->left = left;
+
+		this->right = right;
+
+	}
+
 	BSTNode(E element) {
 
 		this->element = element;
 
-		right = left = nullptr;
-
+		this->left = this->right = nullptr;
 	}
 
 	int childrenCount() {
