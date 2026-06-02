@@ -1,11 +1,12 @@
 #pragma once
 
 #include "BSTNode.h"
+#include "LinkedList.h"
 #include <stdexcept>
 #include <iostream>
 
 using std::cout;
-using std::end;
+using std::runtime_error;
 
 template <typename E>
 
@@ -41,29 +42,6 @@ private:
 		return current;	
 	}
 
-	E findAux(BSTNode<E>* current, E element) {
-
-		if (current == nullptr) {
-
-			throw runtime_error("Element not found");
-		}
-
-		if (current->element == element) {
-
-			return current->element;
-		}
-
-		if (element < current->element) {
-
-			return findAux(current->left);
-		}
-
-		else {
-
-			return findAux(current->right);
-		}
-	}
-
 	BSTNode<E>* removeAux(BSTNode<E>* current, E element, E* result) {
 
 		if (current == nullptr) {
@@ -96,7 +74,7 @@ private:
 
 		if (current->childrenCount() == 1) {
 
-			BSTNode<E>* child = current->onlyChild();
+			BSTNode<E>* child = current->getOnlyChild();
 
 			delete current;
 
@@ -219,9 +197,9 @@ public:
 
 		root = removeAux(root, element, &result);
 
-		return result;
-
 		size--;
+
+		return result;
 	}	
 
 	E find(E element) {
@@ -270,12 +248,12 @@ public:
 
 	int getSize() {
 
-		return 0;
+		return size;
 	}
 
 	bool contains(E element) {
 
-		BSTNode<E> current = root;
+		BSTNode<E>* current = root;
 
 		while (current != nullptr) {
 
@@ -298,7 +276,7 @@ public:
 		return false;
 	}
 
-	bool isEmtpy() {
+	bool isEmpty() {
 
 		return size == 0;
 	}
