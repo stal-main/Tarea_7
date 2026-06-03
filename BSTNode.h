@@ -34,7 +34,7 @@ public:
 		return (left == nullptr ? 0 : 1) + (right == nullptr ? 0 : 1);
 	}
 
-	BSTNode<E> onlyChild() {
+	BSTNode<E> getOnlyChild() {
 
 		return left == nullptr ? right : left;
 	}

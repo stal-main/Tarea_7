@@ -5,9 +5,13 @@
 template <typename K, typename V>
 class Dictionary {
 public:
+
 	Dictionary() {}
+
 	Dictionary(const Dictionary<K, V>&) = delete;
+
 	void operator=(const Dictionary<K, V>&) = delete;
+
 	virtual void insert(K key, V value) = 0;
 	virtual V remove(K key) = 0;
 	virtual V getValue(K key) = 0;

@@ -7,10 +7,12 @@
 #include <stdexcept>
 
 using std::runtime_error;
+using std::cout;
+using std::endl;
 
 template <typename K, typename V>
 
-class BSTDictionary {
+class BSTDictionary : public Dictionary<K, V> {
 
 private:
 	BSTree<Pair<K, V>>* tree;

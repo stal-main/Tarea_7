@@ -90,7 +90,7 @@ private:
 		return current;
 	}
 
-	BSTNode<E> getSuccessor(BSTNode<E>* current) {
+	BSTNode<E>* getSuccessor(BSTNode<E>* current) {
 
 		BSTNode<E>* successor = current->right;
 
