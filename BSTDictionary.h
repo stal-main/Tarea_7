@@ -38,7 +38,7 @@ public:
 
 			return removed.value;
 		}
-		catch (runtime_error& e) {
+		catch (runtime_error&) {
 
 			throw runtime_error("Key not found");
 		}
@@ -51,7 +51,7 @@ public:
 
 			return found.value;
 		}
-		catch (runtime_error& e) {
+		catch (runtime_error&) {
 
 			throw runtime_error("Key not found");
 		}
@@ -172,7 +172,7 @@ public:
 
 			V value = D->getValue(key);
 
-			if (contains(key) {
+			if (contains(key)) {
 
 				setValue(key, value);
 			}
