@@ -73,11 +73,11 @@ void handleInsert(BSTDictionary<int, string>& dict) {
         
 		dict.insert(key, value);
 
-		cout << "Inserted (" << key << ", " << value << ") into dictionary." << endl;
+		cout << "Inserted (" << key << ", " << value << ") into dictionary." << "\n";
     }
     catch (std::runtime_error& e) {
 
-        cout << "Error: " << e.what() << endl;
+        cout << "Error: " << e.what() << "\n";
 
 	}
 }

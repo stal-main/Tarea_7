@@ -146,15 +146,12 @@ private:
 			return;
 		}
 
-		cout << "(";
-
 		printAux(current->left);
 
-		cout << current->element;
+		cout << current->element << " ";
 
 		printAux(current->right);
 
-		cout << ")";
 	}
 
 	int height(BSTNode<E>* current) {
